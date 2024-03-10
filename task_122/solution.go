@@ -22,12 +22,12 @@ func maxProfit(prices []int) int {
 		sell := prices[rightIndex]
 		profit := sell - buy
 
-		if profit < 0 || profit < localMaxProfit {
+		if profit > localMaxProfit {
+			localMaxProfit = profit
+		} else {
 			result += localMaxProfit
 			localMaxProfit = 0
 			leftIndex = rightIndex
-		} else {
-			localMaxProfit = profit
 		}
 
 		rightIndex++
