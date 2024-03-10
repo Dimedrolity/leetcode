@@ -14,19 +14,14 @@ func maxProfit(prices []int) int {
 		sell := prices[rightIndex]
 		profit := sell - buy
 
-		if profit > 0 {
-			if profit < localMaxProfit {
-				result += localMaxProfit
-				localMaxProfit = 0
-				leftIndex = rightIndex
-			} else {
-				localMaxProfit = profit
-			}
-		} else {
+		if profit < 0 || profit < localMaxProfit {
 			result += localMaxProfit
 			localMaxProfit = 0
 			leftIndex = rightIndex
+		} else {
+			localMaxProfit = profit
 		}
+
 		rightIndex++
 	}
 
