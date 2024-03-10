@@ -12,8 +12,8 @@ func TestMaxProfit_Ascending(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
-// TestMaxProfit_MaxToLeftOfMin максимальный левее минимального, поэтому не учитывается.
-func TestMaxProfit_MaxToLeftOfMin(t *testing.T) {
+// TestMaxProfit_BuyAndSellTwice максимальный левее минимального, поэтому не учитывается.
+func TestMaxProfit_BuyAndSellTwice(t *testing.T) {
 	actual := maxProfit([]int{7, 1, 5, 3, 6, 4})
 	expected := 7
 	assert.Equal(t, expected, actual)
