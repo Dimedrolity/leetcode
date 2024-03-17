@@ -9,6 +9,9 @@ package task_53
 // Сложность по времени O(N), по памяти O(1).
 // Идея в том, чтобы добавлять элемент в сумму, но если этот элемент больше чем (сумма предыдущих + этот элемент),
 // то он становится большей суммой.
+//
+// P.S. Это алгоритм Кадана https://en.wikipedia.org/wiki/Maximum_subarray_problem
+// Можно упростить: localMaxSum = max(num, localMaxSum+num)
 func maxSubArray(nums []int) int {
 	localMaxSum := nums[0] // не 0, так как возможны отрицательные числа.
 	globalMaxSum := localMaxSum
