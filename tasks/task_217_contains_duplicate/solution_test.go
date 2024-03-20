@@ -1,4 +1,4 @@
-package task_217
+package task_217_contains_duplicate
 
 import (
 	"github.com/stretchr/testify/assert"

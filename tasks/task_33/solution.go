@@ -1,4 +1,4 @@
-// Package task_217
+// Package task_217_contains_duplicate
 // 33. Search in Rotated Sorted Array
 package task_33
 

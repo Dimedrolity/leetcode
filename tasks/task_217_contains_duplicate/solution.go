@@ -1,6 +1,6 @@
-// Package task_217
+// Package task_217_contains_duplicate
 // 217. Contains Duplicate
-package task_217
+package task_217_contains_duplicate
 
 // containsDuplicate
 // Мое решение.
