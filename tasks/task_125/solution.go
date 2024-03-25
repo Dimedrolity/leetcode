@@ -33,7 +33,7 @@ func reverse(s string) string {
 	return b.String()
 }
 
-func alphanumeric(s string) string {
+func isAlphanumeric(s string) string {
 	b := strings.Builder{}
 	for _, r := range s {
 		if unicode.IsDigit(r) || unicode.IsLetter(r) {
@@ -50,7 +50,7 @@ func alphanumeric(s string) string {
 // Сложность по времени O(N), по памяти O(N).
 // Идея в том, чтобы отфильтровать только цифры и буквы, привести к нижнему регистру и сравнить с реверснутой строкой.
 func isPalindrome(s string) bool {
-	alphanum := alphanumeric(s)
+	alphanum := isAlphanumeric(s)
 	alphanum = strings.ToLower(alphanum)
 	rev := reverse(alphanum)
 
