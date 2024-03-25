@@ -49,10 +49,43 @@ func isAlphanumeric(s string) string {
 // Мое решение после рефакторинга.
 // Сложность по времени O(N), по памяти O(N).
 // Идея в том, чтобы отфильтровать только цифры и буквы, привести к нижнему регистру и сравнить с реверснутой строкой.
-func isPalindrome(s string) bool {
+func isPalindrome_Ref(s string) bool {
 	alphanum := isAlphanumeric(s)
 	alphanum = strings.ToLower(alphanum)
 	rev := reverse(alphanum)
 
 	return alphanum == rev
+}
+
+func isByteAlphanumeric(b byte) bool {
+	return ('0' <= b && b <= '9') || ('a' <= b && b <= 'z') || ('A' <= b && b <= 'Z')
+}
+
+// isPalindrome
+// Мое решение по идее из интернета.
+// Сложность по времени O(N), по памяти O(1).
+// Идея в том, чтобы создать 2 указателя на начало и конец,
+// сравнивать alphanumeric байты и сдвигать указатели в сторону друг к другу.
+// Проверка на alphanumeric проихсодит по кодам ASCII,
+func isPalindrome(s string) bool {
+	left, right := 0, len(s)-1
+
+	for left < right {
+		for left < right && !isByteAlphanumeric(s[left]) {
+			left++
+		}
+		for left < right && !isByteAlphanumeric(s[right]) {
+			right--
+		}
+
+		equals := strings.ToLower(string(s[left])) == strings.ToLower(string(s[right]))
+		if !equals {
+			return false
+		}
+
+		left++
+		right--
+	}
+
+	return true
 }

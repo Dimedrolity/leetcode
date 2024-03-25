@@ -16,6 +16,7 @@ func TestIsPalindrome(t *testing.T) {
 		{"Строка палиндром со знаками препинания", "A man, a plan, a canal: Panama", true},
 		{"Строка не палиндром", "race a car", false},
 		{"Пустая строка", "", true},
+		{"Строка не палиндром из двух элементов", "0P", false},
 	}
 
 	for _, testCase := range testCases {
