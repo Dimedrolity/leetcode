@@ -22,7 +22,7 @@ func TestContainsDuplicate(t *testing.T) {
 	for _, testCase := range testCases {
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			t.Log(testCase.nums)
+			t.Log(testCase.name)
 
 			actual := containsDuplicate(testCase.nums)
 			assert.Equal(t, testCase.expected, actual)
