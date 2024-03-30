@@ -18,7 +18,9 @@ func coinChange(coins []int, amount int) int {
 	dp := make([]int, amount+1) // для каждой суммы (индекс) кол-во монет (значение)
 	defaultValue := amount + 1
 	for i := range dp {
-		dp[i] = defaultValue // макс значение. Далее будет браться минимум.
+		dp[i] = defaultValue // макс значение.
+		// Такого числа не может быть при последующих вычислениях,
+		// так как для сбора amount нужно максимум amount монет по 1 = amount.
 	}
 	dp[0] = 0 // для суммы 0 нужно 0 монет
 	for a := 1; a <= amount; a++ {
